@@ -1,0 +1,13 @@
+<p>
+{{#link-to 'index' (query-params order=(if (eq model.params.order 'asc') 'desc' 'asc'))}}
+  Change order to {{if (eq model.params.order 'asc') 'desc' 'asc'}}
+{{/link-to}}
+</p>
+<button {{action 'changeOrder'}}>
+  Change order to {{if (eq model.params.order 'asc') 'desc' 'asc'}}
+</button>
+<ul>
+{{#each model.items as |item|}}
+  <li>{{item.title}}</li>
+{{/each}}
+</ul>
